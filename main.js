@@ -20,3 +20,14 @@ function factorial(n) {
     if (n === 1) return 1;
     return n * factorial(n - 1);
 }
+
+// Question 4 - Check all values in an array
+
+function all(arr, func) {
+    if (arr.length < 1) return true;
+    if (!func(arr[0])) return false;
+    let copy = arr;
+    copy.shift();
+    return all(copy, func);
+}
+
