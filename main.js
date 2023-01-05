@@ -31,3 +31,10 @@ function all(arr, func) {
     return all(copy, func);
 }
 
+// Question 5 - Product of an array
+
+function productOfArray(arr) {
+    if (arr.length < 1) return 1;
+    return arr.shift() * productOfArray(arr);
+}
+
