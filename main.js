@@ -38,3 +38,15 @@ function productOfArray(arr) {
     return arr.shift() * productOfArray(arr);
 }
 
+// Question 6 - Search JS object
+
+function contains(obj, val) {
+    if (typeof obj !== 'object') return false;
+    for (let item of Object.values(obj)) {
+        if (Object.values(item).includes(val)) {
+            return true;
+        } else {
+            return contains(item, val);
+        }
+    }
+}
