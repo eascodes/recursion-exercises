@@ -66,3 +66,20 @@ function totalIntegers(arr) {
     }
     return total + totalIntegers(arr);
 }
+
+// Question 8 - Sum the squares
+
+function sumSquares(arr) {
+    if (arr.length < 1) {
+        return 0;
+    }
+    let total = 0;
+    let first = arr.shift();
+    if (Array.isArray(first)) {
+        total += sumSquares(first);
+    } else if (typeof first === "number") {
+        total += (first * first);
+    }
+    return total + sumSquares(arr);
+}
+
