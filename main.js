@@ -50,3 +50,19 @@ function contains(obj, val) {
         }
     }
 }
+
+// Question 7 - Parse a multi-dimensional array
+
+function totalIntegers(arr) {
+    if (arr.length < 1) {
+        return 0;
+    }
+    let total = 0;
+    let first = arr.shift();
+    if (Array.isArray(first)) {
+        total += totalIntegers(first);
+    } else if (typeof first === "number") {
+        total += 1;
+    }
+    return total + totalIntegers(arr);
+}
