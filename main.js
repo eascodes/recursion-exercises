@@ -83,3 +83,14 @@ function sumSquares(arr) {
     return total + sumSquares(arr);
 }
 
+// Question 9 - Replicate argument
+
+function replicate(rep, num) {
+    if (rep < 1) { 
+        return [];
+    } else if (rep === 1) {
+        return num;
+    } else {
+        return [num, (replicate((rep - 1), num))].flat();
+    }
+}
